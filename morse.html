@@ -10,7 +10,7 @@
     <form action="#">
       <textarea id="inputarea" rows="3" cols="40">SOS</textarea>
       <br />
-      <input type="submit" value="SIGNAL" onclick="morse().toSignal($('#inputarea').val())" />
+      <input type="submit" value="SIGNAL" onclick="morse().toSignal($('#inputarea').val()); return false;" />
     </form>
   </body>  
 </html>
