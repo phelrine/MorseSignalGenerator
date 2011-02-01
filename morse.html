@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>MSG</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+    <script type="text/javascript" src="morse.js"></script>
+  </head>
+  <body bgcolor="black">
+    <h1 style="color:white;">Morse Signal Generator</h1>
+    <form action="#">
+      <textarea id="inputarea" rows="3" cols="40">SOS</textarea>
+      <br />
+      <input type="submit" value="SIGNAL" onclick="morse().toSignal($('#inputarea').val())" />
+    </form>
+  </body>  
+</html>
