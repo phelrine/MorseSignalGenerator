@@ -3,7 +3,7 @@ morse = function(){
     var bar = '1';
     var charDem = '2';
     var wordDem = '3';
-    var dotTime = 150;
+    var dotTime = 160;
     var barTime = dotTime * 3;
     var cDemTime = dotTime * 3;
     var wDemTime = dotTime * 7;
@@ -33,14 +33,24 @@ morse = function(){
 				 
 	var bgWhite = function(seq, i){
 	    if(i >= seq.length){
+		$('embed').remove();
 		return;
 	    }
 	    var c = seq[i];
 	    if(c === charDem || c === wordDem){
+		$('embed').remove();
 		bgBlack(seq, i);
 		return;
 	    }
 	    
+	    $('body').append(
+		$('<embed>').attr({
+		    src: (c == dot)? 'dot.mp3' : 'bar.mp3',
+		    autoplay: 'true',
+		    hidden: 'true'
+		})
+	    );
+
 	    $('body').css('background','white');
 	    var interval = (c === dot)? dotTime : barTime;
 	    setTimeout(
